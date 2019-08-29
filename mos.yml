@@ -3,6 +3,9 @@ type: lib
 description: Google IoT Core integration
 version: 1.0
 
+fs:
+ - certs
+
 sources:
   - src
 
@@ -12,7 +15,7 @@ includes:
 config_schema:
   - ["gcp", "o", {title: "GCP IOT settings"}]
   - ["gcp.enable", "b", false, {title: "Enable GCP IOT"}]
-  - ["gcp.server", "s", "mqtt.googleapis.com", {title: "Server address"}]
+  - ["gcp.server", "s", "mqtt.2030.ltsapis.goog", {title: "Server address"}]
   - ["gcp.project", "s", "", {title: "Project ID"}]
   - ["gcp.region", "s", "", {title: "Region name"}]
   - ["gcp.registry", "s", "", {title: "Device registry name"}]
@@ -23,7 +26,6 @@ config_schema:
   - ["gcp.enable_commands", "b", true, {title: "Subscribe to the command topic"}]
 
 libs:
-  - origin: https://github.com/mongoose-os-libs/ca-bundle
   - origin: https://github.com/mongoose-os-libs/mqtt
   # GCP requires valid time to sign tickets.
   - origin: https://github.com/mongoose-os-libs/sntp
